@@ -10,5 +10,9 @@ const ll LL_INF = 9223372036854775807;
 
 
 int main() {
+    ll a, b;
+    cin >> a >> b;
+    cout << a << b << endl;
+    
     return 0;
 }
