@@ -5,12 +5,14 @@ using namespace std;
 typedef long long ll;
 
 // 例
+// 文字列操作があんまわからんかったかもしれんこれは
 int main() {
     string s;
     cin >> s;
 
     // 固定長のやつは固定で書いたほうがいいわ絶対
     for(int bit=0; bit < (1<<3); bit++) {
+        // これintにキャストしてんのか初めて知った
         int tmp = s.at(0) - '0';
         string ans = "";
         ans += s.at(0);
