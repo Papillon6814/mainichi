@@ -5,6 +5,7 @@ typedef long long ll;
 
 string s;
 
+// https://qiita.com/hareku/items/3d08511eab56a481c7db
 int main() {
     cin >> s;
     ll num = s.length()-1;
