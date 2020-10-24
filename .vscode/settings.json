@@ -5,6 +5,7 @@
     "iomanip": "cpp",
     "sstream": "cpp",
     "regex": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "cmath": "cpp"
   }
 }
