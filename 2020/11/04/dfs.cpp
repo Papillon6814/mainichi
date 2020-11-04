@@ -46,4 +46,6 @@ int main() {
 
     if(dfs(sx, sy)) cout << "Yes" << endl;
     cout << "No" << endl;
+
+    return 0;
 }
