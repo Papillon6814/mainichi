@@ -15,20 +15,19 @@ int bfs(int sy, int sx) {
     queue<pii> q;
 
     pii g(gy, gx);
+
     q.push(pii(sy, sx));
-
     dist[sy][sx] = 0;
-
     while(!q.empty()) {
         pii t = q.front();
         q.pop();
-        if(g == t) return dist[t.first][t.second];
 
+        if(g == t) return dist[t.first][t.second];
         for(int i=0; i<4; i++) {
             int ty = t.first + d[i][0];
             int tx = t.second + d[i][1];
 
-            if(tx<0 || ty<0 || ty>r || m[ty][tx] == '#' || dist[t.first][t.second] > dist[ty][tx]) continue;
+            if(ty < 0 || tx < 0 || ty > r || m[ty][tx] == '#' || dist[ty][tx] <= dist[t.first][t.second] + 1) continue;
             q.push(pii(ty, tx));
 
             dist[ty][tx] = dist[t.first][t.second] + 1;
@@ -39,12 +38,10 @@ int bfs(int sy, int sx) {
 }
 
 int main() {
-    cin >> r >> c;
-    cin >> sy >> sx;
-    cin >> gy >> gx;
+    cin >> r >> c >> sy >> sx >> gy >> gx;
+    sy--;sx--;gy--;gx--;
     for(int i=0; i<r; i++) cin >> m[i];
 
-    sy--;sx--;gy--;gx--;
     cout << bfs(sy, sx) << endl;
 
     return 0;
