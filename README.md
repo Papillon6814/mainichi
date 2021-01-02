@@ -1,2 +1,2 @@
 # mainichi
-mainichi practice fuck you!!!!
+mainichi practice fuck you
