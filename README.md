@@ -1,2 +1,2 @@
 # tracker
-mainichi practice fuck you
+Repository for storing programs which I write everyday for practice.
