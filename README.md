@@ -1,2 +1,2 @@
-# mainichi
+# tracker
 mainichi practice fuck you
