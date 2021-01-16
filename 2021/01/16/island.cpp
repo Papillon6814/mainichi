@@ -26,6 +26,8 @@ int main() {
     for(int i=0; i<v.size(); i++) {
         int b = v[i].first;
         int a = v[i].second;
+        // 始点が今よりも後ろにあるか
+        // 終点が今よりも前にある場合?
         if (a > now || now >= b) {
             now = b-1;
             ans++;
