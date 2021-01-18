@@ -9,7 +9,6 @@ int main() {
     int N = 4e5 + 123;
     int cnt[N];
 
-
     for(int i=1; i <= n; i++) {
         int x;
         cin >> x;
