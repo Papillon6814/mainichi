@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using vi = vector<int>;
+using vl = vector<ll>;
+using vc = vector<char>;
+using vii = vector<vector<int>>;
+using vll = vector<vector<ll>>;
+using vcc = vector<vector<char>>;
+using vs = vector<string>;
+using Pi = pair<int , int>;
+using Pl = pair<ll, ll>;
+using vpi = vector<Pi>;
+using vpl = vector<Pl>;
+#define rep(i, n) for (ll i = 0; i < n; i++)
+#define REP(n) for (ll i = 0; i < n; i++)
+#define repint(i, n) for (int i = 0; i < n; i++)
+#define rep2(i, s, n) for (int i = (s); i < n; i++)
+#define REP2(s, n) for (int i = (s); i < n; i++)
+#define rep3(i ,j, n, m) rep(i, n)rep(j, m)
+#define REP3(n, m) rep(i, n)rep(j, m)
+#define sort(A) sort(A.begin(),A.end());
+#define reverse(A) reverse(A.begin(),A.end());
+#define k(s) cout << fixed << setprecision(s);
+const long double pi=3.14159265358979323846;
+const long long MOD=1000000007;
+
+int main() {
+    ll n, w;
+    cin >> n >> w;
+    ll weight[110], value[110];
+    REP(n) cin >> weight[i] >> value[i];
+    ll dp[110][1000100];
+
+    REP(n) {
+        for(int j=0; j<=w; j++) {
+            // jは容量
+            // 容量にちゃんと収まるとき
+            if(j - weight[i] >= 0) {
+                // ここがすごい、余った分の容量をj-weight[i]として、そこに入れれるはずの値をdpテーブルから持ってきていれてる
+                dp[i+1][j] = max(dp[i+1][j], dp[i][j-weight[i]]+value[i]);
+            }
+
+            // 現状の値とどっちが大きいか比較
+            dp[i+1][j] = max(dp[i+1][j], dp[i][j]);
+        }
+    }
+
+    cout << dp[n][w] << endl;
+}
