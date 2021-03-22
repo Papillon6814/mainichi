@@ -30,15 +30,18 @@ int main() {
     cin >> n >> m;
 
     int t[2] = {0, 0};
+    // n回ループ
     while(n--) {
         string s;
         cin >> s;
         int cc = 0;
         for(char& c : s) {
+            // XORを使う 
+            // - '0'をすることでcharからintへ変換している
             cc ^= (c - '0');
         }
         t[cc]++;
     }
 
-    cout << 1LL * t[0] * t[1];
+    cout << 1 * t[0] * t[1] << endl;
 }
