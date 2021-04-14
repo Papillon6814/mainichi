@@ -26,25 +26,29 @@ const long double pi=3.14159265358979323846;
 const long long MOD=1000000007;
 
 struct UnionFind {
-    vector<int> data;
+    vi data;
 
+    // グループに入れられる前の初期値
     void init(int N) {
         data.assign(N, -1);
     }
 
+    // 
     int root(int x) {
         return data[x] < 0 ? x : data[x] = root(data[x]);
     }
 
+    // 
     int size(int x) {
         return -data[root(x)];
     }
 
+    // 木を融合する
     bool unionSet(int x, int y) {
         x = root(x);
         y = root(y);
-        if( x != y) {
-            if(data[y] < data[x]) swap(x, y);
+        if (x != y) {
+            if (data[y] < data[x]) swap(x, y);
             data[x] += data[y];
             data[y] = x;
         }
@@ -52,10 +56,11 @@ struct UnionFind {
         return x != y;
     }
 
+    // 同一の木に所属しているかを確認する
     bool findSet(int x, int y) {
         return root(x) == root(y);
     }
-}
+};
 
 int main() {
     int N, Q;
