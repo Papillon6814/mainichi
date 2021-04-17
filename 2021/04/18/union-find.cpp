@@ -42,10 +42,11 @@ struct UnionFind {
     }
 
     // xとyの木を融合
-    bool unite(int x, int y) {
+    void unite(int x, int y) {
         int rx = root(x); // xの根をrx
         int ry = root(y); // yの根をry
-        return rx == ry;
+        if (rx == ry) return; // xとyの根が同じとき
+        par[rx] = ry;
     }
 
     // 2つのデータx, yが属する木が同じならtrueを返す
