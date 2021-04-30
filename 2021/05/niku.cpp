@@ -30,14 +30,13 @@ int main() {
     cin >> N;
 
     int t[N];
-    REP(N) {
-        cin >> t[i];
-    }
+    REP(N) cin >> t[i];
 
     int ans = INT_MAX;
     REP(1<<N) {
         int a = 0;
         int b = 0;
+
         rep(j, N) {
             if(i&(1<<j)) {
                 a += t[j];
